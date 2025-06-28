@@ -3,9 +3,9 @@ import mysql.connector
 
 app = Flask(__name__)
 
-# Database connection
+
 db = mysql.connector.connect(
-    host="localhost",        # Use your public IP if deploying on cloud
+    host="localhost",       
     user="root",
     password="root",
     database="sagar"
@@ -19,7 +19,7 @@ def add_record():
     exercise = data.get('exercise')
     weight = data.get('weight')
     reps = data.get('reps')
-    record_date = data.get('record_date')  # yyyy-mm-dd
+    record_date = data.get('record_date')
 
     cursor.execute(
         "INSERT INTO records (user_name, exercise, weight, reps, record_date) VALUES (%s, %s, %s, %s, %s)",
